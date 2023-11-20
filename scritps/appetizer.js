@@ -14,20 +14,28 @@ const Appetizer = () => {
       name: "Cheese Fries",
       description:
         "Our freshly cooked fries, lightly salted and topped with some of the best cheese.",
+      imageSrc: "imgs/cheese_fries.jpg",
     },
     {
       name: "Onion Rings",
-      description: "Onion rings onion rings onion rings onion rings",
+      description: "Crispy onion rings served with a special dipping sauce.",
+      imageSrc: "imgs/onion_rings.jpg",
     },
     {
       name: "Nachos",
-      description: "Nachos and cheese the best of all.",
+      description: "Crunchy nachos n cheese",
+      imageSrc: "imgs/nachos.jpg",
     },
   ];
 
   appetizerItems.forEach((item, index) => {
     const listItem = document.createElement("li");
     listItem.setAttribute("class", "appetizer-item");
+
+    const itemImage = document.createElement("img");
+    itemImage.setAttribute("src", item.imageSrc);
+    itemImage.setAttribute("alt", item.name);
+    listItem.appendChild(itemImage);
 
     const itemTitle = document.createElement("h2");
     itemTitle.innerHTML = item.name;
