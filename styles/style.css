@@ -79,29 +79,27 @@ body {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
-  align-items: flex-start; /* Align items to the start of the flex container */
+  align-items: flex-start;
 }
 
 .appetizer-item {
-  flex-basis: calc(
-    100% - 20px
-  ); /* Make each appetizer take full width minus margin */
+  flex-basis: calc(100% - 20px);
   margin: 10px;
-  overflow: hidden; /* To ensure the border-radius clips the content */
+  overflow: hidden;
   border-radius: 10px;
-  margin-bottom: 30px; /* Add bottom margin for spacing between items */
+  margin-bottom: 30px;
 }
 
 .appetizer-title {
   background-size: cover;
   background-position: center;
-  height: 200px; /* Height of the title area with background image */
+  height: 200px;
   display: flex;
   align-items: center;
   justify-content: center;
   color: white;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
-  margin: 0; /* Remove margin for the title */
+  margin: 0;
   position: relative;
 }
 
@@ -111,8 +109,7 @@ body {
   text-align: center;
 }
 
-/* The ::before pseudo-element is used to overlay the background image */
-.cheese-fries .appetizer-title::before {
+.cheesefries .appetizer-title::before {
   content: "";
   position: absolute;
   top: 0;
