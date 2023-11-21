@@ -1,55 +1,68 @@
+class AppetizerItem {
+  constructor(id, title, description) {
+    this.id = id;
+    this.title = title;
+    this.description = description;
+  }
+
+  createItem() {
+    const item = document.createElement("div");
+    item.setAttribute("class", `appetizer-item text-center ${this.id}`);
+
+    const itemContent = document.createElement("div");
+    itemContent.setAttribute("class", "appetizer-content");
+
+    const itemTitle = document.createElement("h1");
+    itemTitle.innerHTML = this.title;
+    itemTitle.setAttribute("class", "appetizer-title");
+
+    const itemDescription = document.createElement("p");
+    itemDescription.innerHTML = this.description;
+    itemDescription.setAttribute("class", "appetizer-description");
+
+    itemContent.appendChild(itemTitle);
+    itemContent.appendChild(itemDescription);
+
+    item.appendChild(itemContent);
+
+    return item;
+  }
+}
+
 const Appetizer = () => {
   const appetizerContent = document.createElement("div");
-  appetizerContent.setAttribute("class", "container");
+  appetizerContent.setAttribute("class", "appetizer container");
 
   const appetizerHeader = document.createElement("h1");
   appetizerHeader.setAttribute("class", "text-center my-3 pt-5 mb-5");
   appetizerHeader.innerHTML = "Appetizer Menu";
-
-  const appetizerList = document.createElement("ul");
-  appetizerList.setAttribute("class", "appetizerList");
-
-  const appetizerItems = [
-    {
-      name: "Cheese Fries",
-      description:
-        "Our freshly cooked fries, lightly salted and topped with some of the best cheese.",
-      imageSrc: "imgs/cheese_fries.jpg",
-    },
-    {
-      name: "Onion Rings",
-      description: "Crispy onion rings served with a special dipping sauce.",
-      imageSrc: "imgs/onion_rings.jpg",
-    },
-    {
-      name: "Nachos",
-      description: "Crunchy nachos n cheese",
-      imageSrc: "imgs/nachos.jpg",
-    },
-  ];
-
-  appetizerItems.forEach((item, index) => {
-    const listItem = document.createElement("li");
-    listItem.setAttribute("class", "appetizer-item");
-
-    const itemImage = document.createElement("img");
-    itemImage.setAttribute("src", item.imageSrc);
-    itemImage.setAttribute("alt", item.name);
-    listItem.appendChild(itemImage);
-
-    const itemTitle = document.createElement("h2");
-    itemTitle.innerHTML = item.name;
-    listItem.appendChild(itemTitle);
-
-    const itemDescription = document.createElement("p");
-    itemDescription.innerHTML = item.description;
-    listItem.appendChild(itemDescription);
-
-    appetizerList.appendChild(listItem);
-  });
-
   appetizerContent.appendChild(appetizerHeader);
-  appetizerContent.appendChild(appetizerList);
+
+  const appetizerFlexBox = document.createElement("div");
+  appetizerFlexBox.setAttribute("class", "appetizer-flexbox");
+
+  const cheeseFries = new AppetizerItem(
+    "cheese-fries",
+    "Cheese Fries",
+    "Loaded cheese fries"
+  );
+  appetizerFlexBox.appendChild(cheeseFries.createItem());
+
+  const onionRings = new AppetizerItem(
+    "onion-rings",
+    "Onion Rings",
+    "ONION RINGS ONION RINGS ONION RINGS ONION RINGS."
+  );
+  appetizerFlexBox.appendChild(onionRings.createItem());
+
+  const nachos = new AppetizerItem(
+    "nachos",
+    "Nachos",
+    "NACHOS AND CHEESE BABY."
+  );
+  appetizerFlexBox.appendChild(nachos.createItem());
+
+  appetizerContent.appendChild(appetizerFlexBox);
 
   return appetizerContent;
 };

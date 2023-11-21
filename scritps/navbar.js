@@ -24,17 +24,17 @@ const Navbar = () => {
     list.appendChild(navLink2);
 
     const navLink3 = document.createElement("a");
-    navLink3.setAttribute("id", "contact");
+    navLink3.setAttribute("id", "appetizer");
     navLink3.setAttribute("class", "mx-2");
     navLink3.setAttribute("href", "#");
-    navLink3.innerHTML = "Contact";
+    navLink3.innerHTML = "Appetizer";
     list.appendChild(navLink3);
 
     const navLink4 = document.createElement("a");
-    navLink4.setAttribute("id", "appetizer");
+    navLink4.setAttribute("id", "contact");
     navLink4.setAttribute("class", "mx-2");
     navLink4.setAttribute("href", "#");
-    navLink4.innerHTML = "Appetizer";
+    navLink4.innerHTML = "Contact";
     list.appendChild(navLink4);
 
     return list;

@@ -75,20 +75,78 @@ body {
   font-size: 50px;
 }
 
-.appetizerList {
+.appetizers-flexbox {
   display: flex;
-  list-style: none;
-  padding: 0;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: flex-start; /* Align items to the start of the flex container */
 }
 
 .appetizer-item {
-  flex: 1;
-  text-align: center;
-  margin: 0 10px;
+  flex-basis: calc(
+    100% - 20px
+  ); /* Make each appetizer take full width minus margin */
+  margin: 10px;
+  overflow: hidden; /* To ensure the border-radius clips the content */
+  border-radius: 10px;
+  margin-bottom: 30px; /* Add bottom margin for spacing between items */
 }
 
-.appetizer-item img {
-  width: 100%;
-  max-width: 200px;
-  height: auto;
+.appetizer-title {
+  background-size: cover;
+  background-position: center;
+  height: 200px; /* Height of the title area with background image */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+  margin: 0; /* Remove margin for the title */
+  position: relative;
+}
+
+.appetizer-description {
+  background: none;
+  padding: 15px;
+  text-align: center;
+}
+
+/* The ::before pseudo-element is used to overlay the background image */
+.cheese-fries .appetizer-title::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url("/imgs/cheese_fries.jpg");
+  background-size: cover;
+  background-position: center;
+  z-index: -1;
+}
+
+.onion-rings .appetizer-title::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url("/imgs/onion_rings.jpg");
+  background-size: cover;
+  background-position: center;
+  z-index: -1;
+}
+
+.nachos .appetizer-title::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url("/imgs/nachos.jpg");
+  background-size: cover;
+  background-position: center;
+  z-index: -1;
 }
